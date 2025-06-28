@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SyncCanvas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>SyncCanvas</h1>
+    <p class="subtitle">Draw together in real time</p>
+  </header>
+
+  <main class="main-content">
+    <div class="canvas-container">
+      <canvas id="canvas" aria-label="Shared Drawing Canvas"></canvas>
+    </div>
+
+    <div class="toolbar">
+      <div class="tool-group">
+        <label for="colorPicker" title="Brush Color">🎨 Colors</label>
+        <input type="color" id="colorPicker" value="#d6336c" />
+      </div>
+
+      <div class="tool-group">
+        <label for="brushSize" title="Brush Size">🖌️ Brush Size</label>
+        <input type="range" id="brushSize" min="1" max="20" value="3" />
+      </div>
+
+      <div class="tool-group">
+        <label for="eraserToggle" title="Eraser Mode">🧽 Eraser</label>
+        <input type="checkbox" id="eraserToggle" />
+      </div>
+
+      <div class="tool-group">
+        <button id="undoBtn" title="Undo">Undo</button>
+        <button id="redoBtn" title="Redo">Redo</button>
+        <button id="clearBtn" title="Clear Canvas">Clear</button>
+        <button id="saveBtn" title="Save Drawing">Save</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>© 2025 SyncCanvas • Collaborative Drawing App</p>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
